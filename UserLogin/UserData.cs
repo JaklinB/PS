@@ -19,9 +19,9 @@ namespace UserLogin
         static private List<User> _testUsers;
         static private void ResetTestUserData()
         {
-        String[] usernames = new string[3] {"userAdmin", "student1", "student2" };
-        String[] passwords = new string[3] {"passwordAdmin", "pass1", "pass2" };
-        String[] fakNums = new string[3] {"fnAdmin", "fn1", "fn2" };
+        String[] usernames = new string[3] {"userAdmin", "mariika", "draganka" };
+        String[] passwords = new string[3] {"passwordAdmin", "parolanamariika", "parolanadraganka" };
+        String[] fakNums = new string[3] {"fnAdmin", "fnmariika", "fndraganka" };
         int[] roles = new int[3] {1, 4, 4};
 
             if (_testUsers == null)
