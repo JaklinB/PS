@@ -1,0 +1,49 @@
+﻿<Window x:Class="Expenselt.ExpenseReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Expenselt"
+        mc:Ignorable="d"
+        Title="Expenseelt - View Expense" Height="450" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.jpeg"></ImageBrush>
+        </Grid.Background>
+        <Label Grid.Column="1" Grid.Row="0" Content="Expense Report For:" FontWeight="Bold" FontSize="30" Foreground="AntiqueWhite" Margin="0, 10"></Label>
+        <Label Grid.Column="1" Grid.Row="1" Content="Name:" FontWeight="Bold" FontSize="25" Margin="0, 10 "></Label>
+        <Label Grid.Column="1" Grid.Row="1" Content="{Binding Path=Name}" Margin="100, 10, 0, 80" FontSize="25" FontWeight="Bold"></Label>
+        <Label Grid.Column="1" Grid.Row="1" Content="Department:" FontWeight="Bold" FontSize="25" Margin="0, 50"></Label>
+        <Label Grid.Column="1" Grid.Row="1" Content="{Binding Path=Department}" Margin="170, 50, 0, 40" FontSize="25" FontWeight="Bold"></Label>
+        <Border Grid.Column="1" Grid.Row="1" Margin="0, 100, 0, 0" Background="AntiqueWhite">
+            <Label Content="Expense Type                 Amount" FontSize="15" FontWeight="DemiBold" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+        </Border>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ListBox Background="Transparent" Grid.ColumnSpan="2" Margin="0,0,60,10" Grid.RowSpan="2">
+                <DataGrid Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=Expenses}" AutoGenerateColumns="False" RowHeaderWidth="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ExpenseType" Binding="{Binding Path=ExpenseType}"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Path=ExpenseAmount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>

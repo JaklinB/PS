@@ -1,0 +1,28 @@
+﻿<Window x:Class="StudentInfoSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:StudentInfoSystem.ViewModel"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:TestAction/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding getData}"/>
+    </Window.InputBindings>
+    <Grid>
+        <Label Content="Въведете име и парола:" FontSize="30" HorizontalAlignment="Center" Margin="0,36,0,354"/>
+        <TextBox Text="{Binding St_name, UpdateSourceTrigger=PropertyChanged}" Name="username" HorizontalAlignment="Left" Margin="337,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" Height="32">
+        </TextBox>
+        <TextBox Text="{Binding St_pass, UpdateSourceTrigger=PropertyChanged}" Name="password" HorizontalAlignment="Left" Margin="337,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="253" Height="32"/>
+        <Label Content="Потребителско име:" FontSize="20" HorizontalAlignment="Left" Margin="119,142,0,0" VerticalAlignment="Top"/>
+        <Label Content="Парола:" FontSize="20" HorizontalAlignment="Left" Margin="231,0,0,0" VerticalAlignment="Center"/>
+        <Button Command="{Binding getData}" Content="Покажи данни" FontSize="20" HorizontalAlignment="Left"
+                Margin="474,312,0,0" VerticalAlignment="Top" Height="42" Width="141">
+            
+        </Button>
+
+    </Grid>
+</Window>
